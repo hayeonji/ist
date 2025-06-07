@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Looping Video</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      background-color: black;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    video {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      max-width: 100vw;
+      max-height: 100vh;
+      object-fit: contain; /* 잘리지 않게 */
+    }
+  </style>
+</head>
+<body>
+  <video id="mainVideo" autoplay loop playsinline>
+    <source src="doll_clue3.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+
+  <script>
+    // 모바일에서 소리 포함 재생을 위해 사용자 입력 시도
+    window.addEventListener('click', () => {
+      const video = document.getElementById('mainVideo');
+      video.muted = false;
+      video.play();
+    });
+  </script>
+</body>
+</html>
