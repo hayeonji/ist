@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>3 Image Switch</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      background-color: #000;
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    img {
+      max-width: 100vw;
+      max-height: 100vh;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      cursor: pointer;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <img id="viewer" src="calender_clue1(1).png" alt="Clue Image" />
+
+  <script>
+    const viewer = document.getElementById('viewer');
+    const images = ["calender_clue1(1).png", "calender_clue1(2).png", "calender_clue1(3).png"];
+    let index = 0;
+
+    function nextImage() {
+      index = (index + 1) % images.length;
+      viewer.src = images[index];
+    }
+
+    viewer.addEventListener("click", nextImage);
+    viewer.addEventListener("touchstart", nextImage);
+  </script>
+</body>
+</html>
