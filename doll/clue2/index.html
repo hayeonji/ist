@@ -3,46 +3,27 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Clue Image Switch</title>
+  <title>Single Image Full View</title>
   <style>
     html, body {
       margin: 0;
       padding: 0;
-      background-color: #000;
       width: 100vw;
       height: 100vh;
+      background-color: black;
       overflow: hidden;
-      display: flex;
-      justify-content: center;
-      align-items: center;
     }
 
     img {
-      max-width: 100vw;
-      max-height: 100vh;
-      width: auto;
-      height: auto;
-      object-fit: contain;
-      cursor: pointer;
       display: block;
+      width: 100vw;
+      height: 100vh;
+      object-fit: cover;
     }
   </style>
 </head>
 <body>
-  <img id="clueImage" src="doll_clue2(1).png" alt="Clue Image" />
-
-  <script>
-    const img = document.getElementById('clueImage');
-    const imgList = ["doll_clue2(1).png", "doll_clue2(2).png"];
-    let current = 0;
-
-    function toggleImage() {
-      current = (current + 1) % imgList.length;
-      img.src = imgList[current];
-    }
-
-    img.addEventListener("click", toggleImage);
-    img.addEventListener("touchstart", toggleImage);
-  </script>
+  <img src="calender_clue2_F.png" alt="Full View Image" />
 </body>
 </html>
+
