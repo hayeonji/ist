@@ -3,27 +3,41 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Single Image Full View</title>
+  <title>clue</title>
   <style>
-    html, body {
+    body {
       margin: 0;
       padding: 0;
-      width: 100vw;
+      background-color: #000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       height: 100vh;
-      background-color: black;
       overflow: hidden;
     }
 
     img {
-      display: block;
       width: 100vw;
       height: 100vh;
-      object-fit: cover;
+      object-fit: cover; /* 비율 유지하면서 화면 전체 채우기 */
+      cursor: pointer;
     }
   </style>
 </head>
 <body>
-  <img src="calender_clue2_F.png" alt="Full View Image" />
-</body>
-</html>
+  <img id="viewer" src="doll_clue2(1)_F.png" alt="Clue image" />
 
+  <script>
+    const images = [
+      'doll_clue2(1)_F.png',
+      'doll_clue2(2)_F.png'
+    ];
+    let currentIndex = 0;
+    const viewer = document.getElementById('viewer');
+
+    viewer.addEventListener('click', () => {
+      currentIndex = (currentIndex + 1) % images.length;
+      viewer.src = images[currentIndex];
+    });
+  </script>
+</body>
