@@ -27,9 +27,9 @@
       position: absolute;
       top: 50%;      /* 화면 중앙 정렬 */
       left: 50%;
-      transform: translate(-50%, -50%); /* 중앙 맞춤 */
-      width: 1500px;  /* 유튜브 영상 가로 크기 */
-      height: 842px; /* 유튜브 영상 세로 크기 */
+      transform: translate(-50%, -45%); /* 중앙 맞춤 */
+      width: 70vw;   /* 화면 가로 크기의 80% */
+      aspect-ratio: 16 / 9; /* 16:9 비율 유지 */
       border: none;
       z-index: 10;    /* 이미지 위로 나오도록 */
       box-shadow: 0 0 20px rgba(0,0,0,0.7); /* 선택사항: 영상에 그림자 */
@@ -45,17 +45,18 @@
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
     allowfullscreen>
   </iframe>
+
+  <button onclick="openWindow()">새 창 열기</button>
+
+  <script>
+  function openWindow() {
+    window.open(
+      'your_page.html', 
+      '_blank', 
+      'width=1536,height=2047,top=100,left=100,resizable=yes'
+    );
+  }
+  </script>
 </body>
 </html>
-<button onclick="openWindow()">새 창 열기</button>
-
-<script>
-function openWindow() {
-  window.open(
-    'your_page.html', 
-    '_blank', 
-    'width=1536,height=2047,top=100,left=100,resizable=yes'
-  );
-}
-</script>
 
