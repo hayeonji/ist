@@ -3,22 +3,26 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Clue Image</title>
+  <title>Single Image Full View</title>
   <style>
-    body {
+    html, body {
       margin: 0;
       padding: 0;
-      background-color: #000;
+      width: 100vw;
+      height: 100vh;
+      background-color: black;
+      overflow: hidden;
     }
 
     img {
       display: block;
       width: 100vw;
-      height: auto;
+      height: 100vh;
+      object-fit: cover;
     }
   </style>
 </head>
 <body>
-  <img src="drink_clue3.png" alt="Clue Image" />
+  <img src="drink_clue3_F.png" alt="Full View Image" />
 </body>
 </html>
