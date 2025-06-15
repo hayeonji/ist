@@ -3,22 +3,70 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Clue Image</title>
+  <title>clue</title>
   <style>
-    body {
+    html, body {
       margin: 0;
       padding: 0;
-      background-color: #000;
+      width: 100vw;
+      height: 100vh;
+      background-color: black;
+      overflow: hidden;
+      position: relative;
     }
 
     img {
-      display: block;
+      position: absolute;
+      top: 0; left: 0;
       width: 100vw;
-      height: auto;
+      height: 100vh;
+      object-fit: cover;
+    }
+
+    iframe {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -45%);
+      width: 70vw;
+      aspect-ratio: 16 / 9;
+      border: none;
+      z-index: 10;
+      box-shadow: 0 0 20px rgba(0,0,0,0.7);
+    }
+
+    button {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      z-index: 20;
+      padding: 10px 20px;
+      background: rgba(255, 255, 255, 0.8);
+      border: none;
+      cursor: pointer;
+      border-radius: 4px;
     }
   </style>
 </head>
 <body>
-  <img src="mask_clue1.png" alt="Clue Image" />
+  <img src="mask_clue1_F.png" alt="Full View Image" />
+
+  <iframe 
+    src="https://hayeonji.github.io/ist/mask/clue1/weblink/index.html" 
+    title="Embedded Webpage" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture">
+  </iframe>
+
+  <button onclick="openWindow()">새 창 열기</button>
+
+  <script>
+    function openWindow() {
+      window.open(
+        'https://hayeonji.github.io/ist/mask/clue1/weblink/index.html', 
+        '_blank', 
+        'width=1536,height=2047,top=100,left=100,resizable=yes'
+      );
+    }
+  </script>
 </body>
 </html>
